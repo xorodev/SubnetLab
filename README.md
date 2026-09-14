@@ -3,7 +3,7 @@
 # SubnetLab — Laboratorio de Subnetting
 
 [![License: GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg?style=flat)](https://www.gnu.org/licenses/gpl-3.0.txt)
-[![Release](https://img.shields.io/badge/Version-v1.0.0--release-blue?style=flat)](https://github.com/xorodev/SubnetLab/releases/tag/v1.0.0-release)
+[![Release](https://img.shields.io/badge/Version-v1.0.1--release-blue?style=flat)](https://github.com/xorodev/SubnetLab/releases/tag/v1.0.1-release)
 ![Platform](https://img.shields.io/badge/Platform-Web-06b6d4?logo=googlechrome&logoColor=white&style=flat)
 ![Status](https://img.shields.io/badge/Status-In%20maintenance-orange?style=flat)
 [![GitHub Pages](https://img.shields.io/badge/Demo-GitHub%20Pages-181717?style=flat&logo=github&logoColor=white)](https://xorodev.github.io/SubnetLab)

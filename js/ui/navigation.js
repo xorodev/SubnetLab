@@ -196,7 +196,7 @@
 
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) {
-    document.title = 'SubnetLab · v1.0.0';
+    document.title = 'SubnetLab · v1.0.1';
   } else {
     document.title = 'SubnetLab';
   }
