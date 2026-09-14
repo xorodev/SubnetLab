@@ -1,3 +1,17 @@
+# Changelog — SubnetLab
+
+## 🛠️ Parche de interfaz y mantenimiento — 2026-09-14
+
+Parche de mantenimiento enfocado en correcciones de alineación visual y actualización del número de versión a **v1.0.1**.
+
+### 🐛 Correcciones de UI
+- **Pie de página (Footer):** Se corrigió la alineación horizontal del aviso de privacidad (`.footer-privacy`) para que permanezca centrado en pantallas anchas y monitores de alta resolución.
+
+### 🔧 Mantenimiento
+- **Control de versión:** Actualización global de las referencias a la versión **v1.0.1** en la barra lateral, títulos dinámicos del navegador (`js/ui/navigation.js`), `index.html` y la documentación general (`README.md`).
+
+---
+
 ## ✨ Lanzamiento inicial — 2026-09-14
 Primera versión estable de **SubnetLab**, un laboratorio interactivo para el subnetting extremo de direcciones IP, pensado tanto para usuarios sin experiencia previa como para **ingenieros de redes**.
 
