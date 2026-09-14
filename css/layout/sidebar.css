@@ -1,0 +1,185 @@
+/* SubnetLab — Copyright (C) 2026 @xorodev (CipherCoreDev) — Licensed under GPLv3. See LICENSE. */
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: min(var(--sidebar-width), 84vw);
+  height: 100vh;
+  height: 100dvh;
+  height: calc(var(--app-vh, 1vh) * 100);
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface-glass);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border-right: 1px solid var(--color-border);
+  z-index: var(--z-sidebar);
+  transform: translateX(-100%);
+  transition: transform var(--duration-medium) var(--ease-out);
+  will-change: transform;
+}
+
+.sidebar.is-open {
+  transform: translateX(0);
+}
+
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  height: 100dvh;
+  height: calc(var(--app-vh, 1vh) * 100);
+  background: var(--color-scrim);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: var(--z-overlay);
+  opacity: 0;
+  overscroll-behavior: contain;
+  transition: opacity var(--duration-medium) var(--ease-standard);
+}
+
+.sidebar-overlay.is-visible {
+  opacity: 1;
+}
+
+.sidebar-overlay[hidden] {
+  display: none;
+}
+
+.perf-low .sidebar,
+.perf-low .sidebar-overlay {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.perf-low .sidebar {
+  background: var(--color-bg-elevated);
+  will-change: auto;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1.25rem 1.1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.brand-mark-icon {
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-md);
+  background: var(--gradient-accent);
+  color: var(--color-accent-contrast);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+  box-shadow: var(--shadow-glow-accent);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.brand-text strong {
+  font-size: 0.95rem;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.brand-text span {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+}
+
+.sidebar-close {
+  margin-left: auto;
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  transition: background-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard);
+}
+
+.sidebar-close:hover {
+  background: var(--color-surface-alt);
+  color: var(--color-text-primary);
+}
+
+.tab-nav {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1rem 0.85rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+.sidebar-footer {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 1rem 1.1rem 1.2rem;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.sidebar-footer svg {
+  flex: 0 0 auto;
+  margin-top: 0.1rem;
+  color: var(--color-text-muted);
+}
+
+.sidebar-footer p {
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+html.scroll-locked {
+  overflow: hidden;
+}
+
+body.sidebar-locked {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+@media (min-width: 960px) {
+  .sidebar {
+    transform: translateX(0);
+    width: var(--sidebar-width);
+  }
+
+  html.sidebar-collapsed .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar-overlay {
+    display: none;
+  }
+
+  .sidebar-close {
+    display: none;
+  }
+}
+
+@media (min-width: 1600px) {
+  .sidebar {
+    width: calc(var(--sidebar-width) + 20px);
+  }
+}

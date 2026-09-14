@@ -1,0 +1,45 @@
+/* SubnetLab — Copyright (C) 2026 @xorodev (CipherCoreDev) — Licensed under GPLv3. See LICENSE. */
+.table-scroll {
+  overflow-x: auto;
+  border-radius: var(--radius-sm);
+  scrollbar-width: thin;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+.data-table thead th {
+  text-align: left;
+  color: var(--color-accent);
+  font-weight: 700;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--color-border-strong);
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  background: var(--color-surface);
+}
+
+.data-table tbody td {
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.data-table tbody tr:nth-child(even) td {
+  background: var(--color-surface-alt);
+}
+
+.data-table tbody tr:hover td {
+  background: var(--color-accent-soft);
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}

@@ -1,0 +1,33 @@
+/* SubnetLab — Copyright (C) 2026 @xorodev (CipherCoreDev) — Licensed under GPLv3. See LICENSE. */
+body {
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(circle at 12% 8%, var(--color-radial-1), transparent 42%),
+    radial-gradient(circle at 88% 92%, var(--color-radial-2), transparent 45%),
+    linear-gradient(var(--color-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: auto, auto, 56px 56px, 56px 56px;
+  background-attachment: fixed;
+  background-repeat: no-repeat, no-repeat, repeat, repeat;
+  color: var(--color-text-primary);
+  font-family: var(--font-ui);
+  font-size: clamp(0.9rem, 0.83rem + 0.25vw, 1rem);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color var(--duration-medium) var(--ease-standard), color var(--duration-medium) var(--ease-standard);
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+}
+
+a {
+  color: var(--color-accent);
+}
+
+code, kbd, samp {
+  font-family: var(--font-mono);
+}

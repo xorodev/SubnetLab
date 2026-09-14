@@ -1,0 +1,108 @@
+/* SubnetLab — Copyright (C) 2026 @xorodev (CipherCoreDev) — Licensed under GPLv3. See LICENSE. */
+:root {
+  color-scheme: dark;
+
+  --color-bg: #070b14;
+  --color-bg-elevated: #0c1220;
+  --color-surface: #0f1727;
+  --color-surface-alt: #141f34;
+  --color-surface-glass: rgba(15, 23, 42, 0.72);
+  --color-border: #1e293f;
+  --color-border-strong: #2c3f66;
+  --color-border-focus: #3ba7ff;
+
+  --color-text-primary: #edf1fa;
+  --color-text-secondary: #94a3c4;
+  --color-text-muted: #5c6a8c;
+
+  --color-accent: #22d3ee;
+  --color-accent-strong: #06b6d4;
+  --color-accent-soft: rgba(34, 211, 238, 0.14);
+  --color-accent-contrast: #04121a;
+  --color-blue: #3b82f6;
+  --color-blue-strong: #2563eb;
+
+  --gradient-accent: linear-gradient(135deg, var(--color-blue) 0%, var(--color-accent) 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0) 100%);
+
+  --color-radial-1: rgba(59, 130, 246, 0.08);
+  --color-radial-2: rgba(34, 211, 238, 0.06);
+  --color-scrim: rgba(3, 6, 14, 0.6);
+
+  --color-danger: #fb7185;
+  --color-danger-bg: rgba(251, 113, 133, 0.1);
+  --color-danger-border: rgba(251, 113, 133, 0.35);
+
+  --color-success: #34d399;
+  --color-success-bg: rgba(52, 211, 153, 0.1);
+  --color-success-border: rgba(52, 211, 153, 0.35);
+
+  --font-ui: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(2, 6, 16, 0.4);
+  --shadow-md: 0 8px 24px -8px rgba(2, 6, 16, 0.55);
+  --shadow-lg: 0 24px 48px -16px rgba(2, 6, 16, 0.65);
+  --shadow-glow-accent: 0 0 0 1px rgba(34, 211, 238, 0.25), 0 8px 24px -8px rgba(34, 211, 238, 0.35);
+
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-medium: 240ms;
+  --duration-slow: 360ms;
+
+  --sidebar-width: 272px;
+  --topbar-height: 68px;
+  --z-sidebar: 40;
+  --z-overlay: 30;
+  --z-topbar: 20;
+  --z-modal: 60;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --color-bg: #f4f6fb;
+  --color-bg-elevated: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-alt: #eef1f8;
+  --color-surface-glass: rgba(255, 255, 255, 0.78);
+  --color-border: #dbe1ee;
+  --color-border-strong: #b9c3da;
+  --color-border-focus: #2563eb;
+
+  --color-text-primary: #101828;
+  --color-text-secondary: #47536b;
+  --color-text-muted: #7b869e;
+
+  --color-accent: #0891b2;
+  --color-accent-strong: #0e7490;
+  --color-accent-soft: rgba(8, 145, 178, 0.12);
+  --color-accent-contrast: #ffffff;
+  --color-blue: #2563eb;
+  --color-blue-strong: #1d4ed8;
+
+  --gradient-surface: linear-gradient(180deg, rgba(16, 24, 40, 0.02) 0%, rgba(16, 24, 40, 0) 100%);
+
+  --color-radial-1: rgba(37, 99, 235, 0.06);
+  --color-radial-2: rgba(8, 145, 178, 0.05);
+  --color-scrim: rgba(16, 24, 40, 0.35);
+
+  --color-danger: #dc2626;
+  --color-danger-bg: rgba(220, 38, 38, 0.08);
+  --color-danger-border: rgba(220, 38, 38, 0.3);
+
+  --color-success: #059669;
+  --color-success-bg: rgba(5, 150, 105, 0.08);
+  --color-success-border: rgba(5, 150, 105, 0.3);
+
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
+  --shadow-md: 0 8px 24px -8px rgba(16, 24, 40, 0.14);
+  --shadow-lg: 0 24px 48px -16px rgba(16, 24, 40, 0.18);
+  --shadow-glow-accent: 0 0 0 1px rgba(8, 145, 178, 0.2), 0 8px 24px -8px rgba(8, 145, 178, 0.25);
+}
