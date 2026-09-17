@@ -187,7 +187,10 @@
 
     updateToggleState();
 
-    const initialActive = navButtons.find((btn) => btn.classList.contains('is-active')) || navButtons[0];
+    const StorageManager = global.NetTool && global.NetTool.StorageManager;
+    const savedTab = StorageManager ? StorageManager.getLastTab() : null;
+    const targetTab = savedTab || 'ipv4';
+    const initialActive = navButtons.find((btn) => btn.dataset.tab === targetTab) || navButtons[0];
     updateHeading(initialActive);
   }
 
