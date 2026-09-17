@@ -3,8 +3,10 @@
   min-height: 100vh;
   min-height: 100dvh;
   min-height: calc(var(--app-vh, 1vh) * 100);
+  padding-top: var(--connection-banner-offset, 0px);
   display: flex;
   align-items: stretch;
+  transition: padding-top var(--duration-medium) var(--ease-out);
 }
 
 .main-area {

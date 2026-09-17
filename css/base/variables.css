@@ -62,6 +62,7 @@
   --z-overlay: 30;
   --z-topbar: 20;
   --z-modal: 60;
+  --z-connection-banner: 70;
 }
 
 :root[data-theme="light"] {

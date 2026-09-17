@@ -1,0 +1,175 @@
+/* SubnetLab — Copyright (C) 2026 @xorodev (CipherCoreDev) — Licensed under GPLv3. See LICENSE. */
+:root {
+  --connection-banner-surface: rgba(15, 23, 42, 0.96);
+}
+
+:root[data-theme="light"] {
+  --connection-banner-surface: rgba(255, 255, 255, 0.96);
+}
+
+.connection-banner {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  z-index: var(--z-connection-banner);
+  width: min(460px, calc(100vw - 2rem));
+  padding: 1.15rem 2.6rem 1.1rem 3.35rem;
+  font-family: var(--font-ui);
+  background-color: var(--connection-banner-surface);
+  background-image: var(--gradient-surface);
+  backdrop-filter: blur(28px) saturate(160%);
+  -webkit-backdrop-filter: blur(28px) saturate(160%);
+  border: 1px solid var(--color-border);
+  border-radius: 22px 8px 22px 8px;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) scale(0.97);
+  transition: opacity var(--duration-medium) var(--ease-out), transform var(--duration-medium) var(--ease-out), background-color var(--duration-medium) var(--ease-standard), border-color var(--duration-medium) var(--ease-standard);
+}
+
+.connection-banner.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%) scale(1);
+}
+
+.connection-banner[hidden] {
+  display: none;
+}
+
+.connection-banner.is-offline {
+  background-image: linear-gradient(180deg, var(--color-danger-bg), var(--color-danger-bg)), var(--gradient-surface);
+  border-color: var(--color-danger-border);
+}
+
+.connection-banner.is-online {
+  background-image: linear-gradient(180deg, var(--color-success-bg), var(--color-success-bg)), var(--gradient-surface);
+  border-color: var(--color-success-border);
+}
+
+.connection-banner-badge {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  box-shadow: var(--shadow-md);
+  transform: rotate(-6deg);
+  transition: transform var(--duration-medium) var(--ease-out), border-color var(--duration-medium) var(--ease-standard), color var(--duration-medium) var(--ease-standard);
+}
+
+.connection-banner.is-offline .connection-banner-badge {
+  border-color: var(--color-danger-border);
+  color: var(--color-danger);
+}
+
+.connection-banner.is-online .connection-banner-badge {
+  border-color: var(--color-success-border);
+  color: var(--color-success);
+  transform: rotate(6deg);
+}
+
+.connection-banner-icon-online {
+  display: none;
+}
+
+.connection-banner.is-online .connection-banner-icon-offline {
+  display: none;
+}
+
+.connection-banner.is-online .connection-banner-icon-online {
+  display: block;
+}
+
+.connection-banner-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.connection-banner-content::before {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.connection-banner.is-offline .connection-banner-content::before {
+  content: "¡Sin conexión!";
+  color: var(--color-danger);
+}
+
+.connection-banner.is-online .connection-banner-content::before {
+  content: "¡Conexión restablecida!";
+  color: var(--color-success);
+}
+
+.connection-banner p {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  text-align: left;
+  color: var(--color-text-secondary);
+}
+
+.connection-banner-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-text-secondary);
+  box-shadow: var(--shadow-sm);
+  transition: background-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard);
+}
+
+.connection-banner-close:hover {
+  background: var(--color-surface-alt);
+  color: var(--color-text-primary);
+}
+
+.perf-low .connection-banner {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+@media (max-width: 640px) {
+  .connection-banner {
+    width: calc(100vw - 1.5rem);
+    padding: 1rem 2.35rem 0.95rem 3rem;
+    border-radius: 18px 8px 18px 8px;
+  }
+
+  .connection-banner-badge {
+    top: -10px;
+    left: -10px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .connection-banner-close {
+    top: -8px;
+    right: -8px;
+    width: 26px;
+    height: 26px;
+  }
+
+  .connection-banner p {
+    font-size: 0.78rem;
+  }
+}

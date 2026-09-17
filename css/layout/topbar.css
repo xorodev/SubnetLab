@@ -1,7 +1,7 @@
 /* SubnetLab — Copyright (C) 2026 @xorodev (CipherCoreDev) — Licensed under GPLv3. See LICENSE. */
 .topbar {
   position: sticky;
-  top: 0;
+  top: var(--connection-banner-offset, 0px);
   z-index: var(--z-topbar);
   display: flex;
   align-items: center;
@@ -12,6 +12,7 @@
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   border-bottom: 1px solid var(--color-border);
   min-height: var(--topbar-height);
+  transition: top var(--duration-medium) var(--ease-out);
 }
 
 .perf-low .topbar {
