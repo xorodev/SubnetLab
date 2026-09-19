@@ -49,6 +49,7 @@
     let lastFocusedElement = null;
     let lockedScrollY = 0;
     let closeTimeoutId = null;
+    let openFrameId = null;
 
     function isOpen() {
       return !modal.hidden && modal.classList.contains('is-visible');
@@ -133,9 +134,10 @@
       renderUsage();
       overlay.hidden = false;
       modal.hidden = false;
-      requestAnimationFrame(() => {
+      openFrameId = requestAnimationFrame(() => {
         overlay.classList.add('is-visible');
         modal.classList.add('is-visible');
+        openFrameId = null;
       });
       lockBodyScroll();
       document.addEventListener('keydown', handleKeydown);
@@ -144,7 +146,11 @@
     }
 
     function closeModal() {
-      if (!isOpen()) return;
+      if (modal.hidden) return;
+      if (openFrameId !== null) {
+        global.cancelAnimationFrame(openFrameId);
+        openFrameId = null;
+      }
       overlay.classList.remove('is-visible');
       modal.classList.remove('is-visible');
       document.removeEventListener('keydown', handleKeydown);
