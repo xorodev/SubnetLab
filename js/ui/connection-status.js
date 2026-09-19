@@ -28,6 +28,7 @@
 
   let hideTimeoutId = null;
   let exitTimeoutId = null;
+  let showFrameId = null;
 
   function clearPendingHide() {
     if (hideTimeoutId !== null) {
@@ -40,6 +41,13 @@
     if (exitTimeoutId !== null) {
       global.clearTimeout(exitTimeoutId);
       exitTimeoutId = null;
+    }
+  }
+
+  function clearPendingShowFrame() {
+    if (showFrameId !== null) {
+      global.cancelAnimationFrame(showFrameId);
+      showFrameId = null;
     }
   }
 
@@ -65,15 +73,18 @@
 
     function showBanner() {
       clearPendingExit();
+      clearPendingShowFrame();
       banner.hidden = false;
-      global.requestAnimationFrame(() => {
+      showFrameId = global.requestAnimationFrame(() => {
         banner.classList.add('is-visible');
+        showFrameId = null;
       });
     }
 
     function hideBanner() {
       clearPendingHide();
       clearPendingExit();
+      clearPendingShowFrame();
       banner.classList.remove('is-visible');
       exitTimeoutId = global.setTimeout(() => {
         banner.hidden = true;
@@ -87,7 +98,6 @@
       banner.classList.add('is-offline');
       textEl.textContent = getOfflineMessage();
       showBanner();
-      hideTimeoutId = global.setTimeout(hideBanner, BANNER_AUTO_HIDE_MS);
     }
 
     function handleOnline() {
