@@ -32,7 +32,6 @@
 
 .connection-banner.is-visible {
   opacity: 1;
-  pointer-events: auto;
   transform: translateY(-50%) scale(1);
 }
 
@@ -135,6 +134,7 @@
   border: 1px solid var(--color-border-strong);
   color: var(--color-text-secondary);
   box-shadow: var(--shadow-sm);
+  pointer-events: auto;
   transition: background-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard);
 }
 
